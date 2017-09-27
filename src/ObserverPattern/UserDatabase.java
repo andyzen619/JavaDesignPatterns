@@ -39,7 +39,7 @@ public enum UserDatabase {
 	}
 	
 	public int getCount() {
-		return count;
+		return database.size();
 	}
 
 }

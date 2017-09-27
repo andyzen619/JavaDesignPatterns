@@ -1,14 +1,13 @@
 package ObserverPattern;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;;
+import java.util.*;
+;
 
 public enum EventDatabase {
 	
 	eventDatabase;
 	private static int count;
-	private static Map<String,Event> database;
+	static Map<String,Event> database;
 	private static boolean isInitialized;
 	
 	public static EventDatabase getInstance() {
@@ -28,11 +27,9 @@ public enum EventDatabase {
 	}
 	
 	public Event getEvent(String eventName) {
-		try 
-		{
+		try {
 			return database.get(eventName);
-		}
-		catch (NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 		}
 		return null;
